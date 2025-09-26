@@ -5,7 +5,9 @@
     let { attr } = window.htmf;
     let message = [submitter, form].map((x) => attr(x, "hf-confirm")).find((x) => x);
     if (message) {
-      return window.confirm(message);
+      if (!window.confirm(message)) {
+        e.preventDefault();
+      }
     }
   });
 })();
