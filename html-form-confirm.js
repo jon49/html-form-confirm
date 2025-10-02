@@ -5,6 +5,7 @@ document.addEventListener("hf:before", e => {
     if (message) {
         if (!window.confirm(message)) {
             e.preventDefault()
+            e.stopImmediatePropagation()
         }
     }
 })
